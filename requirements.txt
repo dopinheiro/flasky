@@ -7,6 +7,7 @@ filelock==3.8.0
 flake8==5.0.4
 Flask==2.2.2
 Flask-Bootstrap==3.3.7.1
+Flask-Moment==1.0.5
 identify==2.5.8
 itsdangerous==2.1.2
 Jinja2==3.1.2
@@ -14,11 +15,13 @@ MarkupSafe==2.1.1
 mccabe==0.7.0
 mypy-extensions==0.4.3
 nodeenv==1.7.0
+packaging==21.3
 pathspec==0.10.2
 platformdirs==2.5.4
 pre-commit==2.20.0
 pycodestyle==2.9.1
 pyflakes==2.5.0
+pyparsing==3.0.9
 PyYAML==6.0
 toml==0.10.2
 tomli==2.0.1
