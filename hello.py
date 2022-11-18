@@ -1,7 +1,7 @@
 import os
 from flask_moment import Moment
 from flask_bootstrap import Bootstrap
-from flask import Flask, redirect, render_template, session, url_for
+from flask import Flask, flash, redirect, render_template, session, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -27,6 +27,9 @@ def internal_server_error(e):
 def index():
     form = NameForm()
     if form.validate_on_submit():
+        old_name = session.get("name")
+        if old_name is not None and old_name != form.name.data:
+            flash("Looks like you have changed your name!!!")
         session["name"] = form.name.data
         return redirect(url_for("index"))
     return render_template("index.html", form=form, name=session.get("name"))
